@@ -1,0 +1,10 @@
+// const mongoose = require('mongoose'),
+//   Schema = mongoose.Schema;
+
+// const CampsiteSchema = new Schema({
+//   description: String
+// });
+
+// const Campsite = mongoose.model('Campsite', CampsiteSchema);
+
+// module.exports = Campsite;
