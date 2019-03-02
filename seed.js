@@ -1,15 +1,35 @@
-// This file allows us to seed our application with data
-// simply run: `node seed.js` from the root of this project folder.
 
-// const db = require('./models');
+const db = require('./models');
 
-// const new_campsite = {description: "Sharp rocks. Middle of nowhere."}
+const videogames_list = [
+    {
+        title: 'Zelda',
+        avatar: 'Link',
+    },
+    {
+        title: 'Donkey Kong',  
+        avatar: 'Diddy Kong'
+    },
+    {
+        title: 'Super Mario Kart',  
+        avatar: 'Yoshi'
+    }
+];
 
-// db.Campsite.create(new_campsite, function(err, campsite){
-//   if (err){
-//     return console.log("Error:", err);
-//   }
+db.Videogames.deleteMany({}, function(err, videogames) {
+    console.log('removed all Videogames');
 
-//   console.log("Created new campsite", campsite._id)
-//   process.exit(); // we're all done! Exit the program.
-// })
+    videogames_list.forEach(function (videogamesData) {
+        var videogames = new db.Videogames({
+            title: videogamesData.title,
+            avatar: videogamesData.author,
+        });
+
+        videogames.save(function(err, savedVideogames) {
+            if (err) {
+                console.log(err);
+            }
+            console.log('saved ' + savedVideogames.title + ' by ' + savedVideogames.avatar);
+        });
+    });
+});
