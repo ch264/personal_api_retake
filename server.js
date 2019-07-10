@@ -42,16 +42,21 @@ app.get('/api', (req, res) => {
   res.json({
     AllMyEndpointsError: true, 
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/example-username/express-personal-api/README.md", // CHANGE ME
+    documentationUrl: "https://github.com/ch264/express-personal-api/README.md", 
     baseUrl: "https://personalapiretake.herokuapp.com/", 
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/videogames", description: "View list of games played"}, 
-      {method: "GET", path: "/api/videogames/:id", description: "View one game played"}, 
-      {method: "POST", path: "/api/videogames", description: "Create a new game"},
-      {method: "PUT", path: "/api/videogames/:id", description: "Update one game played"}, 
-      {method: "Delete", path: "/api/videogames", description: "Delete a new game"},
-      {method: "Delte", path: "/api/videogames/:id", description: "Delete one game played"}, 
+      {method: "GET", path: "/api/profile", description: "shows social media profile and pet information"},
+      {method: "GET", path: "/api/experience", description: "shows present and past work experience"},
+      {method: "GET", path: "/api/education", description: "shows education"},
+      {method: "GET", path: "/api/projects", description: "shows projects"},
+
+      // {method: "GET", path: "/api/videogames", description: "View list of games played"}, 
+      // {method: "GET", path: "/api/videogames/:id", description: "View one game played"}, 
+      // {method: "POST", path: "/api/videogames", description: "Create a new game"},
+      // {method: "PUT", path: "/api/videogames/:id", description: "Update one game played"}, 
+      // {method: "Delete", path: "/api/videogames", description: "Delete a new game"},
+      // {method: "Delte", path: "/api/videogames/:id", description: "Delete one game played"}, 
     ]
   })
 });
@@ -91,13 +96,157 @@ app.get('/api/profile',(req, res) => {
   });
 });
 
+app.get('/api/experience', (req, res) => {
+  res.json(
+    [{
+    company: 'Postman',
+    title: 'Front-end Developer Intern',
+    year: 2019,
+    location: 'San Francisco, USA',
+    responsibilites: [
+      'Project 1: setup internal tooling for Custome Success Team', 
+      'Project 2: refractor previous project to React'
+    ]
+  },
+  {
+    company: 'Usabilla',
+    title: 'Customer Success Manager',
+    year: 'Jan 2018 - Nov 2018',
+    location: 'Amsterdam, The Netherlands',
+    responsibilites: [
+      'Created and maintained partnerships with all customers while maximizing growth and reduced churn, increased customer retention by 35%','Onboarded clients and dove into their digital strategy to drive product adoption',
+      'Developed a deep understanding of the Usabilla solution to proactively advise customers on how to capitalize on their investment',
+      'Collaborated with other teams to formulate strategies, tactics, and workflows to ensure our customers achieve their individual ROI goals',
+      'Created, managed and optimized Customer Success tooling, structure, and processes, Project Management of initiative that drove community success, thereby increased customer retention by 35%',
+      'Liaised with other teams to share clients feedback and bring customer needs/insights to relevant stakeholders'
+    ]
+  },
+  {
+    company: 'Charles River Laboratories',
+    title: 'Senior Account Specialist',
+    year: '2016 - 2017',
+    location: 'Cologne, Germany',
+    responsibilites: [
+      'Trained Managers, Team Leaders and Sales team of various European countries on product and PCP industry Microbial validation requirements.','On-boarded and coached two new junior Account Specialists in Europe.','Delivered on-demand support to internal global teams to drive adoption in the usage of systems and applications.','Led continuous improvement initiatives after the company acquisition to integrate processes and systems.','Supported international sales team – by serving as technical resource for customers and sales personnel, providing product presentations and running financial impact assessments for prospects.','Managed 200+ client accounts across entire Northern, Central and Eastern Europe territories.'
+    ]
+  },
+  {
+    company: 'Celsis',
+    title: 'Account Manager',
+    year: 'Jul 2014 - Aug 2016',
+    location: 'Cologne, Germany',
+    responsibilites: [
+      'Improved the service delivery for over 100 clients in the cosmetic, food and beverage, and pharmaceutical industries across 14 European countries. Liaising between the clients and cross-functional Celsis teams (Production, Manufacturing, R&D, Finance, Technical and Customer Service).','Project Lead for technical software upgrade of all 340 European clients. Trained Global Team members and distributors in various European countries.','Forecasted, monitored, and communicated customer trends to secure efficiency and synergy of internal Celsis departments.','Installation and qualification of hardware and software on customer site. GMP/ISO environments documentation, process validation consulting and application support.','Evolved product literature, writing manuals to support internal global team best practices, increasing sales by 120%.'
+    ]
+  },
+  {
+    company: 'Mango',
+    title: 'Sales Asssistant',
+    year: 'Aug 2012- Mai 2013',
+    location: 'Melbourne, Australia',
+    responsibilites: [
+      'Provided customer service on the shop floor, tills and dressing rooms, and training new staff.','Suggested how to reorganise the till area in order to secure effective and faster till operations, thereby increasing customer satisfaction. Changes were highly appreciated and implemented in this branch.'
+    ]
+  }
+  ]);
+});
+
+app.get('/api/education', (req, res) => {
+  res.json([
+    {
+      University: 'General Assembly',
+      Degree: '12-week, full-time, Web Development Immersive',
+      year: 'Jan 2019 - Apr 2019',
+      location: 'San Francisco, USA',
+      Thesis: 'see project get request: /api/projects'
+    },
+    {
+    University: 'University College London',
+    Degree: 'Master of Science, Crime and Forensic Science',
+    year: '2013-2014',
+    location: 'London, Great Britain',
+    Thesis: 'Timeline evaluation and DNA quantification of earmarks on various surfaces in sterile and non-sterile conditions (1st Class)'
+  },
+  {
+    University: 'University of Sussex',
+    Degree: 'Bachelor of Science (Honours), Biology',
+    year: '2009-2013',
+    location: 'Brighton, Great Britain',
+    Thesis: ' Investigation of the role of SCO2533 in sRNA control in Streptomyces Coelicolor (1st Class)'
+  }
+  ])
+});
+
+app.get('/api/projects', (req, res) => {
+  res.json([{
+    PersonalProjects: [
+      {
+        Title: 'EmmaMeets',
+        Year: 'Apr 2019 - present',
+        Description: 'Web application for dog owners to create profiles for their pups and review dog-related products, which any user can add and edit. Full CRUD functionality on reviews and logged in users can upload images and reset their password by having a token sent to their email that is valid for 30 min. When they click on the token the users are send back to the EmmaMeets app where they can now change their password. This Capstone project was created entirely by myself, building the front and backend within 2 weeks time.',
+        Technologies:[ 'Python',
+          'Peewee',
+          'Flask', 
+          'Flask Login', 
+          'JavaScript',
+          'jQuery',
+          'CSS', 
+          'HTML', 
+          'Bulma',
+          'Jinja2', 
+          'SQLite', 
+          'Postgresql'
+        ],
+        ProjectLink: 'https://emmameets.herokuapp.com/',
+        GitHub: 'https://github.com/ch264/emma_meets'
+      },
+      {
+        Title: 'Hangry',
+        Year: 'Mar 2019 - present',
+        Description: 'Hangry is a platform for users to create and save recipes. Users must register or login to view, create, and save recipes. They have the ability to edit their profile information, edit and delete their created recipes. They can also remove a recipe from their saved collection.',
+        Technologies: [
+          'HTML', 'CSS', 'Python', 'Peewee', 'JavaScript', 'Flask', 'Bulma.css','jQuery','Typed.js'
+        ],
+        ProjectLink: 'https://project-hangry.herokuapp.com/',
+        GitHub: 'https://github.com/ch264/hangry'
+    },
+    {
+      Title: 'Wayfarer',
+        Year: 'Mar 2019 - present',
+        Description: 'Users can create a profile and leave reviews for cities they have traveled to. I build the entire backend with Express, Mongoose and MongoDB and connected the REACT frontend with Axios calls. I participated in setting up JWT authentication and deployed on Heroku in connection with mLab as well as project managed Git conflicts.',
+        Technologies: [
+          'HTML', 'CSS', 'Bootstrap', 'Heroku', 'Semantic UI', 'Flask', 'React.js','Mongoose','Express'
+        ],
+        ProjectLink: 'https://project-hangry.herokuapp.com/',
+        GitHub: 'https://github.com/ch264/hangry'
+    }],
+  Hackathon: 
+  {
+      Title: 'WilderVoices',
+      Description: 'DocuSign Hackathon2019 iOS application. We won 3rd place from 27 entries. This Hackathon was organized by DocuSign together with Google Cloud and The Wilderness Society. WilderVoices aids national nature conservation efforts by enabling users to leave personal voice messages when out in the Wilderness and to record memories/moments, which are turned into text and send to appropriate departments.',
+      year: 'Jun 2019 - present',
+      Technologies: ['Mongoose','Express','React-native','Node.js (MERN stack)', 'Firebase', 'HTML', 'Google API', 'DocuSign API'],
+      GitHub: 'https://github.com/rightbrainpapi/wildervoices/tree/master/pickitout_frontend'
+  },
+  InternProjects: {
+    Title: 'Christina`s Chrome extension',
+    Description: 'A mindfulness chrome extension that opens up in a new tab. Try it, it is free',
+    year: 'Jan 2019 - Apr 2019',
+    Technologies: ['HTML','CSS','JavaScript','Google Developer'],
+    Github: 'https://chrome.google.com/webstore/detail/christinas-chrome-extensi/kmmafchjenalicnigbddpgjdigkmoomj'
+  }
+  }]);
+});
+
+
+
 // get all Videogames READ CRUD
-app.get('/api/videogames'), (req, res) => {
+app.get('/api/videogames', (req, res) => {
   db.Videogames.find({}, (err, foundVideogames) => {
     if (err) return console.log(err);
     res.json(foundVideogames);
   });
-};
+});
 
 // read a specific videogame
 app.get('/api/videogames/:id', (req, res) => {
