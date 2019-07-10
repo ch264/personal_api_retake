@@ -29,4 +29,6 @@ https://codeburst.io/writing-a-crud-app-with-node-js-and-mongodb-e0827cbbdafb
 
 ## Screenshots
 
-![alt text](./Screen Shot 2019-07-10 at 4.15.24 PM.png)
+![landing_page](screenshot1.png)
+
+![api_endpoint_overview](screenshot2.png)
