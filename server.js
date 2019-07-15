@@ -79,8 +79,12 @@ app.get('/api/profile',(req, res) => {
     githubLink: 'https://github.com/ch264',
     githubProfileImage: 'https://github.com/settings/profile',
     linkedIn: 'https://www.linkedin.com/in/christinahastenrath/',
-    facebook: 'https://www.facebook.com' ,
+    facebook: 'https://www.facebook.com/Christinahastenrath',
+    twitter: '@ettinchen',
     currentCity: 'San Francisco',
+    previousCities: [
+      'Cologne', 'Brighton', 'London', 'Melbourne', 'Amsterdam'
+    ],
     pets: [
       {
       name: 'Bella',
