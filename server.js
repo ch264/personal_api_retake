@@ -158,25 +158,25 @@ app.get('/api/experience', (req, res) => {
 app.get('/api/education', (req, res) => {
   res.json([
     {
-      University: 'General Assembly',
-      Degree: '12-week, full-time, Web Development Immersive',
+      university: 'General Assembly',
+      degree: '12-week, full-time, Web Development Immersive',
       year: 'Jan 2019 - Apr 2019',
       location: 'San Francisco, USA',
-      Thesis: 'see project get request: /api/projects'
+      thesis: 'see project get request: /api/projects'
     },
     {
-    University: 'University College London',
-    Degree: 'Master of Science, Crime and Forensic Science',
+    university: 'University College London',
+    degree: 'Master of Science, Crime and Forensic Science',
     year: '2013-2014',
     location: 'London, Great Britain',
-    Thesis: 'Timeline evaluation and DNA quantification of earmarks on various surfaces in sterile and non-sterile conditions (1st Class)'
+    thesis: 'Timeline evaluation and DNA quantification of earmarks on various surfaces in sterile and non-sterile conditions (1st Class)'
   },
   {
-    University: 'University of Sussex',
-    Degree: 'Bachelor of Science (Honours), Biology',
+    university: 'University of Sussex',
+    degree: 'Bachelor of Science (Honours), Biology',
     year: '2009-2013',
     location: 'Brighton, Great Britain',
-    Thesis: ' Investigation of the role of SCO2533 in sRNA control in Streptomyces Coelicolor (1st Class)'
+    thesis: 'Investigation of the role of SCO2533 in sRNA control in Streptomyces Coelicolor (1st Class)'
   }
   ])
 });
@@ -185,10 +185,10 @@ app.get('/api/projects', (req, res) => {
   res.json([{
     PersonalProjects: [
       {
-        Title: 'EmmaMeets',
-        Year: 'Apr 2019 - present',
-        Description: 'Web application for dog owners to create profiles for their pups and review dog-related products, which any user can add and edit. Full CRUD functionality on reviews and logged in users can upload images and reset their password by having a token sent to their email that is valid for 30 min. When they click on the token the users are send back to the EmmaMeets app where they can now change their password. This Capstone project was created entirely by myself, building the front and backend within 2 weeks time.',
-        Technologies:[ 'Python',
+        title: 'EmmaMeets',
+        year: 'Apr 2019 - present',
+        description: 'Web application for dog owners to create profiles for their pups and review dog-related products, which any user can add and edit. Full CRUD functionality on reviews and logged in users can upload images and reset their password by having a token sent to their email that is valid for 30 min. When they click on the token the users are send back to the EmmaMeets app where they can now change their password. This Capstone project was created entirely by myself, building the front and backend within 2 weeks time.',
+        technologies:[ 'Python',
           'Peewee',
           'Flask', 
           'Flask Login', 
@@ -201,48 +201,61 @@ app.get('/api/projects', (req, res) => {
           'SQLite', 
           'Postgresql'
         ],
-        ProjectLink: 'https://emmameets.herokuapp.com/',
-        GitHub: 'https://github.com/ch264/emma_meets'
+        projectLink: 'https://emmameets.herokuapp.com/',
+        github: 'https://github.com/ch264/emma_meets'
       },
       {
-        Title: 'Hangry',
-        Year: 'Mar 2019 - present',
-        Description: 'Hangry is a platform for users to create and save recipes. Users must register or login to view, create, and save recipes. They have the ability to edit their profile information, edit and delete their created recipes. They can also remove a recipe from their saved collection.',
-        Technologies: [
+        title: 'Hangry',
+        year: 'Mar 2019 - present',
+        description: 'Hangry is a platform for users to create and save recipes. Users must register or login to view, create, and save recipes. They have the ability to edit their profile information, edit and delete their created recipes. They can also remove a recipe from their saved collection.',
+        technologies: [
           'HTML', 'CSS', 'Python', 'Peewee', 'JavaScript', 'Flask', 'Bulma.css','jQuery','Typed.js'
         ],
-        ProjectLink: 'https://project-hangry.herokuapp.com/',
-        GitHub: 'https://github.com/ch264/hangry'
+        projectLink: 'https://project-hangry.herokuapp.com/',
+        github: 'https://github.com/ch264/hangry'
     },
     {
-      Title: 'Wayfarer',
-        Year: 'Mar 2019 - present',
-        Description: 'Users can create a profile and leave reviews for cities they have traveled to. I build the entire backend with Express, Mongoose and MongoDB and connected the REACT frontend with Axios calls. I participated in setting up JWT authentication and deployed on Heroku in connection with mLab as well as project managed Git conflicts.',
-        Technologies: [
+      title: 'Wayfarer',
+        year: 'Mar 2019 - present',
+        description: 'Users can create a profile and leave reviews for cities they have traveled to. I build the entire backend with Express, Mongoose and MongoDB and connected the REACT frontend with Axios calls. I participated in setting up JWT authentication and deployed on Heroku in connection with mLab as well as project managed Git conflicts.',
+        technologies: [
           'HTML', 'CSS', 'Bootstrap', 'Heroku', 'Semantic UI', 'Flask', 'React.js','Mongoose','Express'
         ],
-        ProjectLink: 'https://project-hangry.herokuapp.com/',
-        GitHub: 'https://github.com/ch264/hangry'
+        projectLink: 'https://project-hangry.herokuapp.com/',
+        github: 'https://github.com/ch264/hangry'
     }],
-  Hackathon: 
+  Hackathon: [
   {
-      Title: 'WilderVoices',
-      Description: 'DocuSign Hackathon2019 iOS application. We won 3rd place from 27 entries. This Hackathon was organized by DocuSign together with Google Cloud and The Wilderness Society. WilderVoices aids national nature conservation efforts by enabling users to leave personal voice messages when out in the Wilderness and to record memories/moments, which are turned into text and send to appropriate departments.',
-      year: 'Jun 2019 - present',
-      Technologies: ['Mongoose','Express','React-native','Node.js (MERN stack)', 'Firebase', 'HTML', 'Google API', 'DocuSign API'],
-      GitHub: 'https://github.com/rightbrainpapi/wildervoices/tree/master/pickitout_frontend'
+    title: 'random answer text message',
+    description: 'random text answer based on a yes/no question messaged to: ',
+    year: 'July 2019',
+    technologies: 'Twilio API',
+    github: 'This project is located in my personal Twilio Account Twiml Bin'
   },
-  InternProjects: {
-    Title: 'Christina`s Chrome extension',
-    Description: 'A mindfulness chrome extension that opens up in a new tab. Try it, it is free',
+  {
+      title: 'WilderVoices',
+      description: 'DocuSign Hackathon2019 iOS application. We won 3rd place from 27 entries. This Hackathon was organized by DocuSign together with Google Cloud and The Wilderness Society. WilderVoices aids national nature conservation efforts by enabling users to leave personal voice messages when out in the Wilderness and to record memories/moments, which are turned into text and send to appropriate departments.',
+      year: 'Jun 2019 - present',
+      technologies: ['Mongoose','Express','React-native','Node.js (MERN stack)', 'Firebase', 'HTML', 'Google API', 'DocuSign API'],
+      github: 'https://github.com/rightbrainpapi/wildervoices/tree/master/pickitout_frontend'
+  }],
+  InternProjects: [{
+    title: 'Christina`s Chrome extension',
+    description: 'A mindfulness chrome extension that opens up in a new tab. Try it, it is free',
     year: 'Jan 2019 - Apr 2019',
-    Technologies: ['HTML','CSS','JavaScript','Google Developer'],
-    Github: 'https://chrome.google.com/webstore/detail/christinas-chrome-extensi/kmmafchjenalicnigbddpgjdigkmoomj'
-  }
+    technologies: ['HTML','CSS','JavaScript','Google Developer'],
+    github: 'https://chrome.google.com/webstore/detail/christinas-chrome-extensi/kmmafchjenalicnigbddpgjdigkmoomj'
+  }, {
+    title: 'Personal API Resume',
+    description: 'Christina Hastenrath`s resume turned into an API',
+    year: 'July 2019',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'NodeJs', 'Express'],
+    github: 'https://github.com/ch264/personal_api_retake'
+  }]
   }]);
 });
 
-
+// future CRUD implementation with MongoDB and Mongoose
 
 // get all Videogames READ CRUD
 app.get('/api/videogames', (req, res) => {
