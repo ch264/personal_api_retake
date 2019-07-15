@@ -226,6 +226,7 @@ app.get('/api/projects', (req, res) => {
     }],
   Hackathon: [
   {
+    organiser: 'Twilio',
     title: 'random answer text message',
     description: 'random text answer based on a yes/no question messaged to: ',
     year: 'July 2019',
@@ -233,6 +234,7 @@ app.get('/api/projects', (req, res) => {
     github: 'This project is located in my personal Twilio Account Twiml Bin'
   },
   {
+      organiser: ['DocuSign', 'Google Cloud', 'Wilderness Society'],
       title: 'WilderVoices',
       description: 'DocuSign Hackathon2019 iOS application. We won 3rd place from 27 entries. This Hackathon was organized by DocuSign together with Google Cloud and The Wilderness Society. WilderVoices aids national nature conservation efforts by enabling users to leave personal voice messages when out in the Wilderness and to record memories/moments, which are turned into text and send to appropriate departments.',
       year: 'Jun 2019 - present',
