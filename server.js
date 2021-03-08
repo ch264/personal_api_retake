@@ -78,6 +78,7 @@ app.get('/api/profile',(req, res) => {
     githubUsername: 'ch264',
     githubLink: 'https://github.com/ch264',
     githubProfileImage: 'https://github.com/settings/profile',
+    medium: 'https://medium.com/@christinavhastenrath',
     linkedIn: 'https://www.linkedin.com/in/christinahastenrath/',
     facebook: 'https://www.facebook.com/Christinahastenrath',
     twitter: '@ettinchen',
@@ -104,12 +105,13 @@ app.get('/api/experience', (req, res) => {
   res.json(
     [{
     company: 'Postman',
-    title: 'Front-end Developer Intern',
-    year: 2019,
+    title: 'Software Engineer',
+    year: 'June 2019 - current',
     location: 'San Francisco, USA',
     responsibilites: [
-      'Project 1: setup internal tooling for Custome Success Team', 
-      'Project 2: refractor previous project to React'
+      'Lead Developer on Postman Learning Center - Open Source JamStack', 
+      'Lead Developer on Postman Wordpress Blog',
+      'Active Contributor to Postman Marketing Webssite on BitBucket'
     ]
   },
   {
