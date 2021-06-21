@@ -42,7 +42,7 @@ app.get('/api', (req, res) => {
   res.json({
     AllMyEndpointsError: true, 
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/ch264/express-personal-api/README.md", 
+    documentationUrl: "https://github.com/ch264/personal_api_retake", 
     baseUrl: "https://personalapiretake.herokuapp.com/", 
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
